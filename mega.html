@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vectors-Mega Events</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/venobox/venobox.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/styles.scss" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Train+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Slabo+27px|Yesteryear"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Train+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #eceef1;
+        color: #333a45;
+        overflow-x: hidden;
+      }
+
+      #bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      #bg canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .wrapper {
+        margin: 5em auto;
+        max-width: 1000px;
+        background-color: #2c2f33;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);
+      }
+
+      .header {
+        padding: 30px 30px 0;
+        text-align: center;
+      }
+
+      .header__title {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 2.5em;
+        font-weight: 500;
+        line-height: 1.1;
+      }
+
+      .header__subtitle {
+        margin: 0;
+        font-size: 1.5em;
+        color: #949fb0;
+        font-family: "Yesteryear", cursive;
+        font-weight: 500;
+        line-height: 1.1;
+      }
+
+      .cards1 {
+        padding: 15px;
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .card2 {
+        margin: 15px;
+        width: calc((100% / 3) - 30px);
+        border-radius: 5px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      @media screen and (max-width: 991px) {
+        .card2 {
+          width: calc((100% / 2) - 30px);
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .card2 {
+          width: 100%;
+        }
+      }
+
+      .card2:hover .card2__inner {
+        background-color: #7289da;
+        transform: scale(1.05);
+      }
+
+      .card2__inner {
+        width: 100%;
+        padding: 30px;
+        position: relative;
+        cursor: pointer;
+        background-color: #23272a;
+        border-radius: 5px;
+        color: #ffffff;
+        font-family: "Train One", cursive;
+        font-size: larger;
+        min-height: 20vw;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .card2__inner:after {
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card2__inner .fa {
+        width: 100%;
+        margin-top: 0.25em;
+      }
+
+      .card2__expander {
+        transition: all 0.2s ease-in-out;
+        background-color: #333a45;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        color: #eceef1;
+        font-size: 20px;
+      }
+
+      .card2__expander .fa {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+
+      .card2__expander .fa:hover {
+        opacity: 0.9;
+      }
+
+      .card2.is-collapsed .card2__inner:after {
+        content: "";
+        opacity: 0;
+      }
+
+      .card2.is-collapsed .card2__expander {
+        max-height: 0;
+        min-height: 0;
+        overflow: hidden;
+        margin-top: 0;
+        opacity: 0;
+      }
+
+      .card2.is-expanded .card2__inner {
+        background-color: #7289da;
+      }
+
+      .card2.is-expanded .card2__inner:after {
+        content: "";
+        opacity: 1;
+        display: block;
+        height: 0;
+        width: 0;
+        position: absolute;
+        bottom: -30px;
+        left: calc(50% - 15px);
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid #333a45;
+      }
+
+      .card2.is-expanded .card2__inner .fa:before {
+        content: "\f115";
+      }
+
+      .card2.is-expanded .card2__expander {
+        max-height: 5000px;
+        min-height: 200px;
+        overflow: visible;
+        margin-top: 30px;
+        opacity: 1;
+        margin-right: 10px;
+        font-size: 1em;
+      }
+
+      .card2.is-expanded:hover .card2__inner {
+        transform: scale(1);
+      }
+
+      .card2.is-inactive .card2__inner {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
+      .card2.is-inactive:hover .card2__inner {
+        background-color: #949fb0;
+        transform: scale(1);
+      }
+
+      @media screen and (min-width: 992px) {
+        .card2:nth-of-type(3n + 2) .card2__expander {
+          margin-left: calc(-100% - 30px);
+        }
+        .card2:nth-of-type(3n + 3) .card2__expander {
+          margin-left: calc(-200% - 60px);
+        }
+        .card2:nth-of-type(3n + 4) {
+          clear: left;
+        }
+        .card2__expander {
+          width: calc(300% + 60px);
+        }
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        .card2:nth-of-type(2n + 2) .card2__expander {
+          margin-left: calc(-100% - 30px);
+        }
+        .card2:nth-of-type(2n + 3) {
+          clear: left;
+        }
+        .card2__expander {
+          width: calc(200% + 30px);
+        }
+      }
+
+      #events {
+        padding: 0 100px;
+      }
+
+      @media (max-width: 991px) {
+        #events {
+          padding: 0;
+        }
+      }
+
+      button {
+        background: #7289da;
+        color: #ffffff;
+        border-radius: 25px;
+        width: 150px;
+        height: 30px;
+        border: 1px solid #7289da;
+        text-decoration: none;
+      }
+
+      button a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      @media (min-width: 991px) {
+        .card2__inner {
+          padding-top: 100px;
+        }
+      }
+      .arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+    </style>
+  </head>
+
+  <body style="background: #2c2f33; position: absolute; margin-left: 0">
+    <div id="bg">
+      <canvas></canvas>
+      <canvas></canvas>
+      <canvas></canvas>
+    </div>
+
+    <header id="header">
+      <div class="container">
+        <div id="logo" class="pull-left">
+          <!-- Uncomment below if you prefer to use a text logo -->
+          <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+        </div>
+
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li><a href="index.html#intro">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li>
+              <a href="#mega-events" style="padding-left: 0">
+                <div class="dropdown">
+                  Events<i class="fa fa-caret-down"></i>
+                  <div class="dropdown-content">
+                    <a href="mega.html">Mega Events</a>
+                    <a href="mini.html">Mini Events</a>
+                    <a href="fun.html">Fun Events</a>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li><a href="index.html#schedule">Schedule</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- #nav-menu-container -->
+      </div>
+    </header>
+
+    <section
+      id="events"
+      class=""
+      style="position: relative; text-align: center; padding-top: 50px"
+    >
+      <div class="container">
+        <div class="section-header">
+          <h2 style="padding-top: 50px">Mega Events</h2>
+        </div>
+
+        <div>
+          <div class="cards1">
+            <div class="card2 [ is-collapsed ]">
+              <div class="card2__inner [ js-expander ]">
+                <span>Game of Codes</span>
+              </div>
+
+              <div class="card2__expander" style="text-align: left">
+                <p>
+                  <strong>First Price:</strong> ₹3000/- <br /><strong
+                    >Second Prize:</strong
+                  >
+                  ₹2000/-
+                </p>
+                <p><strong>Entry Fee:</strong> Free</p>
+                <p><strong>Date:</strong> 19 & 20 April 2021</p>
+                <button>
+                  <a
+                    href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADqHosxURTlPVk1FSEJNWUhQOTQ2WEdFR0ZVNFdHRi4u"
+                    style="color: white"
+                    >Register</a
+                  >
+                </button>
+                <br />
+                <p>
+                  <strong>About:</strong> “Make appeal, finalize your deal, take
+                  a chance to steal the win...” Be a part of a GRAND CODING
+                  EVENT to test your INSTICTS and SKILLS.
+                </p>
+
+                <p style="text-align: left">
+                  <strong>Team Specifications:</strong> 1. The team should
+                  consists of 3-4 members.(open for all) <br />
+                  2. The team will be divided into two parts i.e. one member of
+                  the team will manage the dealing process and remaining members
+                  of the team will manage program execution part.
+                </p>
+
+                <p>
+                  <strong>Description:</strong> <br /><strong> Round 1:</strong>
+                  Round 1 will be of 7-10 minutes. In this round, one member
+                  from each team will attempt a quiz. Quiz will consist of 20
+                  questions (Non-Technical +GK). <br />
+                  <strong>Round 2:</strong> Round 2 will be of 1hr 30 min. In
+                  this round, each team will be provided with 2 problem
+                  statements. To implement these programs each element (for
+                  loop, if statement, switch case etc) has to be first
+                  purchased. The list of elements with their cost will be
+                  displayed initially. Each team will be given 10 minutes to
+                  discuss, decide and purchase the list of elements which they
+                  require during program implementation (list should be
+                  submitted through a provided google form). Once the team has
+                  purchased the required elements, corresponding points will be
+                  added to team’s wallet. During implementation each team will
+                  have the option to sell or purchase elements by dealing with
+                  other teams or a team can purchase an element directly from
+                  the organizers but at double cost. If any team uses an extra
+                  element which is not mentioned in their initial list then
+                  double cost of each extra element will be added to their
+                  wallet.
+                  <br />
+                </p>
+
+                <p>
+                  <strong>Rules:</strong> <br />
+                  1.Only one member of the team should appear for the quiz in
+                  1st round. <br />
+                  2. The teams should join the meeting on time.<br />
+                  3. In round 1, the contestant should compulsorily submit the
+                  form or else the response will not be recorded.<br />
+                  4. For round 2 there will be 3 meetings, one member from each
+                  team will join the 1st meeting for dealing and remaining
+                  members will join the 2nd meeting for program implementation.
+                  <br />
+                  5. A 3rd meeting link will be provided where a team has to
+                  join to show their output once they have completed their
+                  implementation before time.<br />
+                  6. Initial list of elements should be submitted using the
+                  provided google form before starting the implementation.<br />
+                  7. In round 2, if any team is willing to make a deal with
+                  another team then the deal should be finalized within a
+                  minute. <br />
+                  8. Code file in PDF/DOC and final element list should be
+                  submitted through a provided google form within 3 minutes.<br />
+                  9. If you cheat, use any unfair practice or break the rules,
+                  you will be disqualified <br /><br /><a
+                    href="https://drive.google.com/file/d/1s7ga3tWgtcnEBcMJ4k-bm-56bsNNAPL_/view?usp=sharing"
+                    >Click on the link for more information</a
+                  >
+                </p>
+                <p>
+                  <strong>Contact:</strong> Hitesh Choudhari (8422848432)
+                  <strong>/</strong> Kunal Sarode (9769529896)
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="arrow up" style="align-items: right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="card2 [ is-collapsed ]">
+              <div class="card2__inner [ js-expander ]">
+                <span>Digital Poster Making Competition </span>
+              </div>
+              <div class="card2__expander" style="text-align: left">
+                <p>
+                  <strong>First Price:</strong> ₹3000/- <br />
+                  <strong>Second Prize:</strong> ₹2000/-
+                </p>
+                <p><strong>Entry Fee:</strong> Free</p>
+                <p><strong>Date:</strong> 23 April 2021</p>
+                <button>
+                  <a
+                    href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADqHosxUNERQOFkwQzI2UkdDSzJFRjYzOUtIQU1JUi4u"
+                    style="color: white"
+                    >Register</a
+                  >
+                </button>
+                <br />
+                <p style="text-align: left">
+                  <strong>About:</strong> COVID-19 is ravaging the whole world,
+                  while many other sustainable development issues and challenges
+                  are still threatening the earth’s health. All mankind is
+                  facing severe challenges.Engineering has played an important
+                  role in fighting the COVID-19 pandemic and realizing the
+                  Sustainable Development Goals and will continue to contribute
+                  to protecting our planet’s health. On April 23, 2021, the
+                  Digital Poster Making Competition will be officially launched,
+                  with the theme of
+                  <strong>“Engineering for a Sustainable Future”</strong> .
+                </p>
+                <p style="text-align: left">
+                  <strong>Team Specifications:</strong> Individual entries and
+                  Group entries (maximum of four participants). One competitor
+                  can only submit one proposal.
+                </p>
+                <p style="text-align: left">
+                  <strong>Rules:</strong> 1.Digital Poster Should discuss the
+                  original conceptual engineering model.<br />
+                  2.Use no more than 3 different fonts (generally sans serif
+                  fonts e.g., Arial for axis labels and title).<br />
+                  3.Use brief and simple language, better to avoid text
+                  altogether. <br />
+                  4.A poster is a visual (!) presentation of your work.<br />
+                  5.Graphs say more than words.<br />
+                  6.Text must be legible and succinct.<br />
+                  7.Poster to be submitted in JPEG/JPG/PNG/PDF format only.<br />
+                  8.Individual entries and Group entries (maximum of Four
+                  participants). <br />
+                  9.Contest is open for the student(s) of any Engineering Branch
+                  and passed out student(s) (of 2019-20, 2018-19 Batch).
+                  <br /><br />
+                  <a
+                    href="https://drive.google.com/file/d/1LDMqMTZKMcdpyvniyNIpJ_TXzSZsfZhx/view?usp=sharing"
+                    >Click on the link for more information</a
+                  >
+                </p>
+                <p>
+                  <strong>Contact:</strong> Rahul Patil (9967634813)
+                  <strong>/</strong> Amol Suryawanshi(9767994509)
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="arrow up" style="align-items: right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="card2 [ is-collapsed ]">
+              <div class="card2__inner [ js-expander ]">
+                <span>Circuit Sync</span>
+              </div>
+              <div class="card2__expander" style="text-align: left">
+                <p>
+                  <strong>First Price:</strong> ₹3000/- <br />
+                  <strong>Second Prize:</strong> ₹2000/-
+                </p>
+                <p><strong>Entry Fee:</strong> Free</p>
+                <p><strong>Date:</strong> 19 & 20 April 2021</p>
+                <button>
+                  <a
+                    href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADqHosxUMUtROUtXWVMzQ1VONlFVM0ZaM0o5MUFYTi4u"
+                    style="color: white"
+                    >Register</a
+                  >
+                  <br />
+                </button>
+                <p style="text-align: left">
+                  <strong>Team Specifications:</strong> Individual or Two
+                  members in team(Open for all students)
+                </p>
+                <p style="text-align: left">
+                  <strong>Description:</strong> <br />
+                  Individual or Two members in team(Open for all students)
+                  <br />
+                  <strong>Stage 1:</strong> Each and every team/member will be
+                  provided with a clue about each and every component
+                  respectively of the circuit. And the team/member has to
+                  identify the components via clue. After hunting for the clues,
+                  a final clue will be provided to the participants which will
+                  be the ultimate guideline towards the circuit. And
+                  participants will redraw it on paper and submit it to the
+                  coordinators of the event. (This whole stage has to be
+                  completed within 10minutes.) * Difficulty level easy.<br />
+                  <strong> Stage 2 : </strong> This stage has to be completed
+                  within 25 minutes. The teams selected from the stage 1 will
+                  continue for stage 2. Same procedure will be followed by the
+                  teams. * Difficulty level medium.
+                  <br />
+                  <strong>Stage 3 :</strong> This stage has to be completed
+                  within 15 Minutes. And teams selected from stage 2 will
+                  proceed for this stage. Where same procedure will he followed
+                  as stage 1. *Difficulty level high.<br />
+                </p>
+
+                <p style="text-align: left">
+                  <strong>Rules:</strong> <br />
+                  1.The team which completes the entire task in minimum time
+                  wins the game.<br />
+                  2.Distribution of marks is according to Identification of
+                  components, Identifying the name of circuit and neat and
+                  correct design of circuit, time required to identify the
+                  circuit. <br />3.The decision for any changes if required will
+                  be bounded to organisers. <br /><br />
+                  <a
+                    href="https://drive.google.com/file/d/1wUczEm5N9CH14IlDCbUiFkSwRyZJBqfE/view?usp=sharing"
+                    >Click on the link for more information</a
+                  >
+                </p>
+                <p>
+                  <strong>Contact:</strong> Aishwarya Bhagat (9326272637)
+                  <strong>/</strong> Aakash Salunkhe (9702414432)
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="arrow up" style="align-items: right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="card2 [ is-collapsed ]">
+              <div class="card2__inner [ js-expander ]">
+                <span>How Stuff Works</span>
+              </div>
+              <div class="card2__expander" style="text-align: left">
+                <p>
+                  <strong>First Price:</strong> ₹3000/- <br />
+                  <strong>Second Prize:</strong> ₹2000/-
+                </p>
+                <p><strong>Entry Fee:</strong> Free</p>
+                <p><strong>Date:</strong> 21 & 22 April 2021</p>
+                <button>
+                  <a
+                    href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADqHosxUQTdZRjM5NzBaRjJGWkpOSU1KVFJQSTMwWS4u"
+                    style="color: white"
+                    >Register</a
+                  >
+                </button>
+                <br />
+                <p style="text-align: left">
+                  <strong>About:</strong> Ever wondered why things are the way
+                  they are? Does the working and reason behind the existence of
+                  things make your mind agog? Then, buckle up, for you will be
+                  tested on how you perceive and understand everything, and by
+                  everything, we mean everything. Come, participate in the How
+                  Stuff Works Quiz and win an exciting prize.
+                </p>
+                <p style="text-align: left">
+                  <strong>Team Specifications</strong>Team of two participants
+                </p>
+                <p style="text-align: left">
+                  <strong>Description & Rules:</strong> <br /><strong>
+                    Stage 1:
+                  </strong>
+                  Conjure Us 1.Beware of your surroundings and keep eye on
+                  gadgets around you because that's where answer lies.<br />
+                  2.In these round participants need to solve riddles and guess
+                  gadget. <br />
+                  3.Total 5 riddles +1 Secret Question.<br />
+                  4.Non elimination round<br />
+                  5.Judging criteria :- Based on time stamp and correct answers.
+                  <br />
+                  6.Points will be given for the task.<br />
+                  <strong> Stage 2: </strong> Building Blocks<br />
+                  1.Have you ever wondered what things are made of?<br />
+                  2.In these round participants need to guess gadgets based on
+                  the list of different blocks.<br />
+                  3.Total 3 Questions.<br />
+                  4.Elimination Round.<br />
+                  5.Judging Criteria:- Based on correct answers and timestamp
+                  for tie breaking.<br />
+                  6.Points will be given for the task.<br />
+                  <strong>Stage 3:</strong> Step up<br />
+                  1.Let’s step up the game...Step by Step!<br />
+                  2.In these round participants need to use logic and design
+                  flowcharts for the statements.<br />
+                  3.Only 1 Question<br />
+                  4.Elimination Round <br />
+                  5.Judging criteria:- Based on correct answer and timestamp for
+                  tie breaking. <br />
+                  6.Points will be given for the task.<br />
+                  <strong> Stage 4:</strong> Final Round<br />
+                  1.Flaunt your programming logic with Arduino!<br />
+                  2.In these round participants need to run a simple Arduino
+                  simulation on Tinkercad. <br />
+                  3.Screenshare the simulation.<br />
+                  <strong>Note:-</strong> It would be held in slots for
+                  monitoring purpose and timestamp will be recorded by organizer
+                  using stopwatch.<br />
+                  4.Judging Criteria:- Based on output and timestamp for tie
+                  breaking. <br />
+                  5.Points will be given for the task. <br /><br />
+                  <a
+                    href="https://drive.google.com/file/d/1rOD29KCx2wb77_xiQpRG0ChixRRmDWIX/view?usp=sharing"
+                    >Click on the link for more information</a
+                  >
+                </p>
+                <p>
+                  <strong>Contact:</strong> Swapnali Palshetkar (9326184130)
+                  <strong>/</strong> Mansi Kothavade (9594798902)
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="arrow up" style="align-items: right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="card2 [ is-collapsed ]">
+              <div class="card2__inner [ js-expander ]">
+                <span>Campus Calling</span>
+              </div>
+              <div class="card2__expander" style="text-align: left">
+               <p>
+                  <strong>First Price:</strong> ₹3000/- <br />
+                  <strong>Second Prize:</strong> ₹2000/-
+                </p>
+                <p><strong>Entry Fee:</strong> Free</p>
+                <p><strong>Date:</strong> 24 April 2021</p>
+                <button>
+                  <a
+                    href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADqHosxUM0lDTlUwRzFMRkVZQUxSR0xLVlpCVFI5Ni4u"
+                    style="color: white"
+                    >Register</a
+                  >
+                </button>
+                <br />
+
+                <p style="text-align: left">
+                  <strong>About:</strong> Campus Calling Event will be organized
+                  by MESA. In this event students will get a chance to face the
+                  pre-placement rounds which will boost their confidence before
+                  going for the campus placements.In this event, we are
+                  conducting three rounds.
+                </p>
+
+                <p style="text-align: left">
+                  <strong>Description:</strong> <br />
+                  <strong> Round 1:</strong> General Aptitude exam via google
+                  forms. Participating students will get a link for the exam via
+                  their mail id’s or whatsapp message. A specific time will be
+                  allotted to complete the aptitude exam and later an average
+                  score will be calculated to enter the next round.<br />
+                  <strong>Round 2:</strong> In the second round the students who
+                  have cleared the aptitude exam will face a group discussion
+                  with other students on a common topic provoded by the judges.
+                  The judges will assess your group discussion performance and
+                  reward you points. This round Will be conducted on Google-Meet
+                  platform.
+                  <br />
+                  <strong>Round 3:</strong> In the final round, the shortlisted
+                  students will have to face a personal interview with the
+                  judges, the judges will assess you knowledge and accordingly
+                  reward you some points. The highest point scorer, 1st place
+                  student will be rewarded a cash prize and an online
+                  certificate, and followed by the 2nd place student and the 3rd
+                  place students too. This round will be conducted on Google-
+                  Meet platform.
+                </p>
+
+                <p style="text-align: left">
+                  <strong> Rules:</strong><br />
+                  1.Students participating in this event should provide an
+                  appropriate email ID and their phone number. <br />
+                  2.Students participating in this event must have good internet
+                  connectivity. <br />
+                  3.During group discussion round and personal interview round
+                  camera and microphone should be on. <br />
+                  4.Students should submit their CV/Resume before the personal
+                  interview round. <br />
+                  5.Students causing unnecessary disturbance during online group
+                  discussion round and personal interview round will be
+                  prohibited from the meeting. <br />
+                  <br />
+                  <a
+                    href="https://drive.google.com/file/d/16pqT65nPJqek3DLxcZ8ZoD8BXLGQAK-M/view?usp=sharing"
+                  >
+                    Click on the link for more information</a
+                  >
+                </p>
+
+                <p>
+                  <strong>Contact:</strong> Ruturaj Fakatkar (9819886122)
+                  <strong>/</strong> Adhika More (9619767271)
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="arrow up" style="align-items: right"></i>
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+                Footer
+  ============================-->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 venue-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.7539233242214!2d73.05933931442402!3d19.03056205834555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c24052e100f3%3A0xb6e3e4259b43a898!2sA.%20C.%20Patil%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1612874746839!5m2!1sen!2sin"
+                width="600"
+                height="300"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+                id="desktop"
+              ></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.7539233242214!2d73.05933931442402!3d19.03056205834555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c24052e100f3%3A0xb6e3e4259b43a898!2sA.%20C.%20Patil%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1612957979283!5m2!1sen!2sin"
+                width="300"
+                height="300"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+                id="mobile"
+              ></iframe>
+            </div>
+
+            <div class="col-lg-3 col-md-8 footer-contact">
+              <h4>Contact Us</h4>
+              <p>
+                A C Patil College of Engineering <br />
+                Kharghar <br />
+                Navi Mumbai, India <br />
+
+                <strong>Email:</strong> vectors.acpce@gmail.com <br />
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/acpce.org/?ti=as"
+                  class="facebook"
+                >
+                  <i class="fa fa-facebook"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/vectors.acpce/?igshid=1v2kk25vhngqo"
+                  target="_blank"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="copyright">
+          &copy; Copyright <strong>ACPCE</strong>. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- #footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/venobox/venobox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Main Javascript File -->
+
+    <script src="js/main.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      (function($) {
+          var canvas = $('#bg').children('canvas'),
+              background = canvas[0],
+              foreground1 = canvas[1],
+              foreground2 = canvas[2],
+              config = {
+                  circle: {
+                      amount: 18,
+                      layer: 3,
+                      color: [157, 97, 207],
+                      alpha: 0.3
+                  },
+                  line: {
+                      amount: 12,
+                      layer: 3,
+                      color: [255, 255, 255],
+                      alpha: 0.3
+                  },
+                  speed: 0.5,
+                  angle: 20
+              };
+
+          if (background.getContext) {
+              var bctx = background.getContext('2d'),
+                  fctx1 = foreground1.getContext('2d'),
+                  fctx2 = foreground2.getContext('2d'),
+                  M = window.Math, // Cached Math
+                  degree = config.angle / 360 * M.PI * 2,
+                  circles = [],
+                  lines = [],
+                  wWidth, wHeight, timer;
+
+              requestAnimationFrame = window.requestAnimationFrame ||
+                  window.mozRequestAnimationFrame ||
+                  window.webkitRequestAnimationFrame ||
+                  window.msRequestAnimationFrame ||
+                  window.oRequestAnimationFrame ||
+                  function(callback, element) {
+                      setTimeout(callback, 1000 / 60);
+                  };
+
+              cancelAnimationFrame = window.cancelAnimationFrame ||
+                  window.mozCancelAnimationFrame ||
+                  window.webkitCancelAnimationFrame ||
+                  window.msCancelAnimationFrame ||
+                  window.oCancelAnimationFrame ||
+                  clearTimeout;
+
+              var setCanvasHeight = function() {
+                  wWidth = $(window).width();
+                  wHeight = $(window).height(),
+
+                      canvas.each(function() {
+                          this.width = wWidth;
+                          this.height = wHeight;
+                      });
+              };
+
+              var drawCircle = function(x, y, radius, color, alpha) {
+                  var gradient = fctx1.createRadialGradient(x, y, radius, x, y, 0);
+                  gradient.addColorStop(0, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + alpha + ')');
+                  gradient.addColorStop(1, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + (alpha - 0.1) + ')');
+
+                  fctx1.beginPath();
+                  fctx1.arc(x, y, radius, 0, M.PI * 2, true);
+                  fctx1.fillStyle = gradient;
+                  fctx1.fill();
+              };
+
+              var drawLine = function(x, y, width, color, alpha) {
+                  var endX = x + M.sin(degree) * width,
+                      endY = y - M.cos(degree) * width,
+                      gradient = fctx2.createLinearGradient(x, y, endX, endY);
+                  gradient.addColorStop(0, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + alpha + ')');
+                  gradient.addColorStop(1, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + (alpha - 0.1) + ')');
+
+                  fctx2.beginPath();
+                  fctx2.moveTo(x, y);
+                  fctx2.lineTo(endX, endY);
+                  fctx2.lineWidth = 3;
+                  fctx2.lineCap = 'round';
+                  fctx2.strokeStyle = gradient;
+                  fctx2.stroke();
+              };
+
+              var drawBack = function() {
+                  bctx.clearRect(0, 0, wWidth, wHeight);
+
+                  var gradient = [];
+
+                  gradient[0] = bctx.createRadialGradient(wWidth * 0.3, wHeight * 0.1, 0, wWidth * 0.3, wHeight * 0.1, wWidth * 0.9);
+                  gradient[0].addColorStop(0, 'rgb(0, 26, 77)');
+                  gradient[0].addColorStop(1, 'transparent');
+
+                  bctx.translate(wWidth, 0);
+                  bctx.scale(-1, 1);
+                  bctx.beginPath();
+                  bctx.fillStyle = gradient[0];
+                  bctx.fillRect(0, 0, wWidth, wHeight);
+
+                  gradient[1] = bctx.createRadialGradient(wWidth * 0.1, wHeight * 0.1, 0, wWidth * 0.3, wHeight * 0.1, wWidth);
+                  gradient[1].addColorStop(0, 'rgb(0, 150, 240)');
+                  gradient[1].addColorStop(0.8, 'transparent');
+
+                  bctx.translate(wWidth, 0);
+                  bctx.scale(-1, 1);
+                  bctx.beginPath();
+                  bctx.fillStyle = gradient[1];
+                  bctx.fillRect(0, 0, wWidth, wHeight);
+
+                  gradient[2] = bctx.createRadialGradient(wWidth * 0.1, wHeight * 0.5, 0, wWidth * 0.1, wHeight * 0.5, wWidth * 0.5);
+                  gradient[2].addColorStop(0, 'rgb(40, 20, 105)');
+                  gradient[2].addColorStop(1, 'transparent');
+
+                  bctx.beginPath();
+                  bctx.fillStyle = gradient[2];
+                  bctx.fillRect(0, 0, wWidth, wHeight);
+              };
+
+              var animate = function() {
+                  var sin = M.sin(degree),
+                      cos = M.cos(degree);
+
+                  if (config.circle.amount > 0 && config.circle.layer > 0) {
+                      fctx1.clearRect(0, 0, wWidth, wHeight);
+                      for (var i = 0, len = circles.length; i < len; i++) {
+                          var item = circles[i],
+                              x = item.x,
+                              y = item.y,
+                              radius = item.radius,
+                              speed = item.speed;
+
+                          if (x > wWidth + radius) {
+                              x = -radius;
+                          } else if (x < -radius) {
+                              x = wWidth + radius
+                          } else {
+                              x += sin * speed;
+                          }
+
+                          if (y > wHeight + radius) {
+                              y = -radius;
+                          } else if (y < -radius) {
+                              y = wHeight + radius;
+                          } else {
+                              y -= cos * speed;
+                          }
+
+                          item.x = x;
+                          item.y = y;
+                          drawCircle(x, y, radius, item.color, item.alpha);
+                      }
+                  }
+
+                  if (config.line.amount > 0 && config.line.layer > 0) {
+                      fctx2.clearRect(0, 0, wWidth, wHeight);
+                      for (var j = 0, len = lines.length; j < len; j++) {
+                          var item = lines[j],
+                              x = item.x,
+                              y = item.y,
+                              width = item.width,
+                              speed = item.speed;
+
+                          if (x > wWidth + width * sin) {
+                              x = -width * sin;
+                          } else if (x < -width * sin) {
+                              x = wWidth + width * sin;
+                          } else {
+                              x += sin * speed;
+                          }
+
+                          if (y > wHeight + width * cos) {
+                              y = -width * cos;
+                          } else if (y < -width * cos) {
+                              y = wHeight + width * cos;
+                          } else {
+                              y -= cos * speed;
+                          }
+
+                          item.x = x;
+                          item.y = y;
+                          drawLine(x, y, width, item.color, item.alpha);
+                      }
+                  }
+
+                  timer = requestAnimationFrame(animate);
+              };
+
+              var createItem = function() {
+                  circles = [];
+                  lines = [];
+
+                  if (config.circle.amount > 0 && config.circle.layer > 0) {
+                      for (var i = 0; i < config.circle.amount / config.circle.layer; i++) {
+                          for (var j = 0; j < config.circle.layer; j++) {
+                              circles.push({
+                                  x: M.random() * wWidth,
+                                  y: M.random() * wHeight,
+                                  radius: M.random() * (20 + j * 5) + (20 + j * 5),
+                                  color: config.circle.color,
+                                  alpha: M.random() * 0.2 + (config.circle.alpha - j * 0.1),
+                                  speed: config.speed * (1 + j * 0.5)
+                              });
+                          }
+                      }
+                  }
+
+                  if (config.line.amount > 0 && config.line.layer > 0) {
+                      for (var m = 0; m < config.line.amount / config.line.layer; m++) {
+                          for (var n = 0; n < config.line.layer; n++) {
+                              lines.push({
+                                  x: M.random() * wWidth,
+                                  y: M.random() * wHeight,
+                                  width: M.random() * (20 + n * 5) + (20 + n * 5),
+                                  color: config.line.color,
+                                  alpha: M.random() * 0.2 + (config.line.alpha - n * 0.1),
+                                  speed: config.speed * (1 + n * 0.5)
+                              });
+                          }
+                      }
+                  }
+
+                  cancelAnimationFrame(timer);
+                  timer = requestAnimationFrame(animate);
+                  drawBack();
+              };
+
+              $(document).ready(function() {
+                  setCanvasHeight();
+                  createItem();
+              });
+              $(window).resize(function() {
+                  setCanvasHeight();
+                  createItem();
+              });
+          }
+      })(jQuery);
+
+      var $cell = $('.card2');
+
+      //open and close card when clicked on card
+      $cell.find('.js-expander').click(function() {
+
+          var $thisCell = $(this).closest('.card2');
+
+          if ($thisCell.hasClass('is-collapsed')) {
+              $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+              $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+
+              if ($cell.not($thisCell).hasClass('is-inactive')) {
+                  //do nothing
+              } else {
+                  $cell.not($thisCell).addClass('is-inactive');
+              }
+
+          } else {
+              $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+              $cell.not($thisCell).removeClass('is-inactive');
+          }
+      });
+
+      //close card when click on cross
+      $cell.find('.js-collapser').click(function() {
+
+          var $thisCell = $(this).closest('.card2');
+
+          $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+          $cell.not($thisCell).removeClass('is-inactive');
+
+      });
+      $(".slider").owlCarousel({
+          loop: true,
+          autoplay: true,
+          autoplayTimeout: 2000, //2000ms = 2s;
+          autoplayHoverPause: true,
+          responsive: {
+              0: {
+                  items: 1,
+                  nav: false
+              },
+              600: {
+                  items: 2,
+                  nav: false
+              },
+              1000: {
+                  items: 3,
+                  nav: false
+              }
+          }
+      });
+
+
+      }());
+    </script>
+
+    <script>
+      (function ($) {
+        var canvas = $("#bg").children("canvas"),
+          background = canvas[0],
+          foreground1 = canvas[1],
+          foreground2 = canvas[2],
+          config = {
+            circle: {
+              amount: 18,
+              layer: 3,
+              color: [157, 97, 207],
+              alpha: 0.3,
+            },
+            line: {
+              amount: 12,
+              layer: 3,
+              color: [255, 255, 255],
+              alpha: 0.3,
+            },
+            speed: 0.5,
+            angle: 20,
+          };
+
+        if (background.getContext) {
+          var bctx = background.getContext("2d"),
+            fctx1 = foreground1.getContext("2d"),
+            fctx2 = foreground2.getContext("2d"),
+            M = window.Math, // Cached Math
+            degree = (config.angle / 360) * M.PI * 2,
+            circles = [],
+            lines = [],
+            wWidth,
+            wHeight,
+            timer;
+
+          requestAnimationFrame =
+            window.requestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            function (callback, element) {
+              setTimeout(callback, 1000 / 60);
+            };
+
+          cancelAnimationFrame =
+            window.cancelAnimationFrame ||
+            window.mozCancelAnimationFrame ||
+            window.webkitCancelAnimationFrame ||
+            window.msCancelAnimationFrame ||
+            window.oCancelAnimationFrame ||
+            clearTimeout;
+
+          var setCanvasHeight = function () {
+            wWidth = $(window).width();
+            (wHeight = $(window).height()),
+              canvas.each(function () {
+                this.width = wWidth;
+                this.height = wHeight;
+              });
+          };
+
+          var drawCircle = function (x, y, radius, color, alpha) {
+            var gradient = fctx1.createRadialGradient(x, y, radius, x, y, 0);
+            gradient.addColorStop(
+              0,
+              "rgba(" +
+                color[0] +
+                "," +
+                color[1] +
+                "," +
+                color[2] +
+                "," +
+                alpha +
+                ")"
+            );
+            gradient.addColorStop(
+              1,
+              "rgba(" +
+                color[0] +
+                "," +
+                color[1] +
+                "," +
+                color[2] +
+                "," +
+                (alpha - 0.1) +
+                ")"
+            );
+
+            fctx1.beginPath();
+            fctx1.arc(x, y, radius, 0, M.PI * 2, true);
+            fctx1.fillStyle = gradient;
+            fctx1.fill();
+          };
+
+          var drawLine = function (x, y, width, color, alpha) {
+            var endX = x + M.sin(degree) * width,
+              endY = y - M.cos(degree) * width,
+              gradient = fctx2.createLinearGradient(x, y, endX, endY);
+            gradient.addColorStop(
+              0,
+              "rgba(" +
+                color[0] +
+                "," +
+                color[1] +
+                "," +
+                color[2] +
+                "," +
+                alpha +
+                ")"
+            );
+            gradient.addColorStop(
+              1,
+              "rgba(" +
+                color[0] +
+                "," +
+                color[1] +
+                "," +
+                color[2] +
+                "," +
+                (alpha - 0.1) +
+                ")"
+            );
+
+            fctx2.beginPath();
+            fctx2.moveTo(x, y);
+            fctx2.lineTo(endX, endY);
+            fctx2.lineWidth = 3;
+            fctx2.lineCap = "round";
+            fctx2.strokeStyle = gradient;
+            fctx2.stroke();
+          };
+
+          var drawBack = function () {
+            bctx.clearRect(0, 0, wWidth, wHeight);
+
+            var gradient = [];
+
+            gradient[0] = bctx.createRadialGradient(
+              wWidth * 0.3,
+              wHeight * 0.1,
+              0,
+              wWidth * 0.3,
+              wHeight * 0.1,
+              wWidth * 0.9
+            );
+            gradient[0].addColorStop(0, "rgb(0, 26, 77)");
+            gradient[0].addColorStop(1, "transparent");
+
+            bctx.translate(wWidth, 0);
+            bctx.scale(-1, 1);
+            bctx.beginPath();
+            bctx.fillStyle = gradient[0];
+            bctx.fillRect(0, 0, wWidth, wHeight);
+
+            gradient[1] = bctx.createRadialGradient(
+              wWidth * 0.1,
+              wHeight * 0.1,
+              0,
+              wWidth * 0.3,
+              wHeight * 0.1,
+              wWidth
+            );
+            gradient[1].addColorStop(0, "rgb(0, 150, 240)");
+            gradient[1].addColorStop(0.8, "transparent");
+
+            bctx.translate(wWidth, 0);
+            bctx.scale(-1, 1);
+            bctx.beginPath();
+            bctx.fillStyle = gradient[1];
+            bctx.fillRect(0, 0, wWidth, wHeight);
+
+            gradient[2] = bctx.createRadialGradient(
+              wWidth * 0.1,
+              wHeight * 0.5,
+              0,
+              wWidth * 0.1,
+              wHeight * 0.5,
+              wWidth * 0.5
+            );
+            gradient[2].addColorStop(0, "rgb(40, 20, 105)");
+            gradient[2].addColorStop(1, "transparent");
+
+            bctx.beginPath();
+            bctx.fillStyle = gradient[2];
+            bctx.fillRect(0, 0, wWidth, wHeight);
+          };
+
+          var animate = function () {
+            var sin = M.sin(degree),
+              cos = M.cos(degree);
+
+            if (config.circle.amount > 0 && config.circle.layer > 0) {
+              fctx1.clearRect(0, 0, wWidth, wHeight);
+              for (var i = 0, len = circles.length; i < len; i++) {
+                var item = circles[i],
+                  x = item.x,
+                  y = item.y,
+                  radius = item.radius,
+                  speed = item.speed;
+
+                if (x > wWidth + radius) {
+                  x = -radius;
+                } else if (x < -radius) {
+                  x = wWidth + radius;
+                } else {
+                  x += sin * speed;
+                }
+
+                if (y > wHeight + radius) {
+                  y = -radius;
+                } else if (y < -radius) {
+                  y = wHeight + radius;
+                } else {
+                  y -= cos * speed;
+                }
+
+                item.x = x;
+                item.y = y;
+                drawCircle(x, y, radius, item.color, item.alpha);
+              }
+            }
+
+            if (config.line.amount > 0 && config.line.layer > 0) {
+              fctx2.clearRect(0, 0, wWidth, wHeight);
+              for (var j = 0, len = lines.length; j < len; j++) {
+                var item = lines[j],
+                  x = item.x,
+                  y = item.y,
+                  width = item.width,
+                  speed = item.speed;
+
+                if (x > wWidth + width * sin) {
+                  x = -width * sin;
+                } else if (x < -width * sin) {
+                  x = wWidth + width * sin;
+                } else {
+                  x += sin * speed;
+                }
+
+                if (y > wHeight + width * cos) {
+                  y = -width * cos;
+                } else if (y < -width * cos) {
+                  y = wHeight + width * cos;
+                } else {
+                  y -= cos * speed;
+                }
+
+                item.x = x;
+                item.y = y;
+                drawLine(x, y, width, item.color, item.alpha);
+              }
+            }
+
+            timer = requestAnimationFrame(animate);
+          };
+
+          var createItem = function () {
+            circles = [];
+            lines = [];
+
+            if (config.circle.amount > 0 && config.circle.layer > 0) {
+              for (
+                var i = 0;
+                i < config.circle.amount / config.circle.layer;
+                i++
+              ) {
+                for (var j = 0; j < config.circle.layer; j++) {
+                  circles.push({
+                    x: M.random() * wWidth,
+                    y: M.random() * wHeight,
+                    radius: M.random() * (20 + j * 5) + (20 + j * 5),
+                    color: config.circle.color,
+                    alpha: M.random() * 0.2 + (config.circle.alpha - j * 0.1),
+                    speed: config.speed * (1 + j * 0.5),
+                  });
+                }
+              }
+            }
+
+            if (config.line.amount > 0 && config.line.layer > 0) {
+              for (var m = 0; m < config.line.amount / config.line.layer; m++) {
+                for (var n = 0; n < config.line.layer; n++) {
+                  lines.push({
+                    x: M.random() * wWidth,
+                    y: M.random() * wHeight,
+                    width: M.random() * (20 + n * 5) + (20 + n * 5),
+                    color: config.line.color,
+                    alpha: M.random() * 0.2 + (config.line.alpha - n * 0.1),
+                    speed: config.speed * (1 + n * 0.5),
+                  });
+                }
+              }
+            }
+
+            cancelAnimationFrame(timer);
+            timer = requestAnimationFrame(animate);
+            drawBack();
+          };
+
+          $(document).ready(function () {
+            setCanvasHeight();
+            createItem();
+          });
+          $(window).resize(function () {
+            setCanvasHeight();
+            createItem();
+          });
+        }
+      })(jQuery);
+
+      $(document).ready(function () {
+        //Preloader
+        preloaderFadeOutTime = 500;
+
+        function hidePreloader() {
+          var preloader = $(".spinner-wrapper");
+          preloader.fadeOut(preloaderFadeOutTime);
+        }
+        hidePreloader();
+      });
+    </script>
+  </body>
+</html>

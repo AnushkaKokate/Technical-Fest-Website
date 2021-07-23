@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vectors-Mini Events</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/venobox/venobox.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/styles.scss" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px|Yesteryear" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+  
+        body {
+          background: #eceef1;
+          color: #333a45;
+          overflow-x: hidden;
+        }
+  
+        #bg {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+  
+        #bg canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+  
+        .wrapper {
+          margin: 5em auto;
+          max-width: 1000px;
+          background-color: #2c2f33;
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);
+        }
+  
+        .header {
+          padding: 30px 30px 0;
+          text-align: center;
+        }
+  
+        .header__title {
+          margin: 0;
+          text-transform: uppercase;
+          font-size: 2.5em;
+          font-weight: 500;
+          line-height: 1.1;
+        }
+  
+        .header__subtitle {
+          margin: 0;
+          font-size: 1.5em;
+          color: #949fb0;
+          font-family: "Yesteryear", cursive;
+          font-weight: 500;
+          line-height: 1.1;
+        }
+  
+        .cards1 {
+          padding: 15px;
+          display: flex;
+          flex-flow: row wrap;
+        }
+  
+        .card2 {
+          margin: 15px;
+          width: calc((100% / 3) - 30px);
+          border-radius: 5px;
+          transition: all 0.2s ease-in-out;
+        }
+  
+        @media screen and (max-width: 991px) {
+          .card2 {
+            width: calc((100% / 2) - 30px);
+          }
+        }
+  
+        @media screen and (max-width: 767px) {
+          .card2 {
+            width: 100%;
+          }
+        }
+  
+        .card2:hover .card2__inner {
+          background-color: #7289da;
+          transform: scale(1.05);
+        }
+  
+        .card2__inner {
+          width: 100%;
+          padding: 30px;
+          position: relative;
+          cursor: pointer;
+          background-color: #23272a;
+          border-radius: 5px;
+          color: #ffffff;
+          font-family: "Train One", cursive;
+          font-size: larger;
+          min-height: 20vw;
+          text-align: center;
+          transition: all 0.2s ease-in-out;
+        }
+  
+        .card2__inner:after {
+          transition: all 0.3s ease-in-out;
+        }
+  
+        .card2__inner .fa {
+          width: 100%;
+          margin-top: 0.25em;
+        }
+  
+        .card2__expander {
+          transition: all 0.2s ease-in-out;
+          background-color: #333a45;
+          width: 100%;
+          position: relative;
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px;
+          color: #eceef1;
+          font-size: 20px;
+        }
+  
+        .card2__expander .fa {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+  
+        .card2__expander .fa:hover {
+          opacity: 0.9;
+        }
+  
+        .card2.is-collapsed .card2__inner:after {
+          content: "";
+          opacity: 0;
+        }
+  
+        .card2.is-collapsed .card2__expander {
+          max-height: 0;
+          min-height: 0;
+          overflow: hidden;
+          margin-top: 0;
+          opacity: 0;
+        }
+  
+        .card2.is-expanded .card2__inner {
+          background-color: #7289da;
+        }
+  
+        .card2.is-expanded .card2__inner:after {
+          content: "";
+          opacity: 1;
+          display: block;
+          height: 0;
+          width: 0;
+          position: absolute;
+          bottom: -30px;
+          left: calc(50% - 15px);
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-bottom: 15px solid #333a45;
+        }
+  
+        .card2.is-expanded .card2__inner .fa:before {
+          content: "\f115";
+        }
+  
+        .card2.is-expanded .card2__expander {
+          max-height: 5000px;
+          min-height: 200px;
+          overflow: visible;
+          margin-top: 30px;
+          opacity: 1;
+          margin-right: 10px;
+          font-size: 1em;
+        }
+  
+        .card2.is-expanded:hover .card2__inner {
+          transform: scale(1);
+        }
+  
+        .card2.is-inactive .card2__inner {
+          pointer-events: none;
+          opacity: 0.5;
+        }
+  
+        .card2.is-inactive:hover .card2__inner {
+          background-color: #949fb0;
+          transform: scale(1);
+        }
+  
+        @media screen and (min-width: 992px) {
+          .card2:nth-of-type(3n + 2) .card2__expander {
+            margin-left: calc(-100% - 30px);
+          }
+          .card2:nth-of-type(3n + 3) .card2__expander {
+            margin-left: calc(-200% - 60px);
+          }
+          .card2:nth-of-type(3n + 4) {
+            clear: left;
+          }
+          .card2__expander {
+            width: calc(300% + 60px);
+          }
+        }
+  
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+          .card2:nth-of-type(2n + 2) .card2__expander {
+            margin-left: calc(-100% - 30px);
+          }
+          .card2:nth-of-type(2n + 3) {
+            clear: left;
+          }
+          .card2__expander {
+            width: calc(200% + 30px);
+          }
+        }
+  
+        #events {
+          padding: 0 100px;
+        }
+  
+        @media (max-width: 991px) {
+          #events {
+            padding: 0;
+          }
+        }
+  
+        button {
+          background: #7289da;
+          color: #ffffff;
+          border-radius: 25px;
+          width: 150px;
+          height: 30px;
+          border: 1px solid #7289da;
+          text-decoration: none;
+        }
+  
+        button a {
+          text-decoration: none;
+          color: #ffffff;
+        }
+  
+        @media (min-width: 991px) {
+          .card2__inner {
+            padding-top: 100px;
+          }
+        }
+        .arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+      </style>
+</head>
+
+<body style="background:#2c2f33; position:absolute;margin-left:0; ">
+
+    <div id="bg">
+        <canvas></canvas>
+        <canvas></canvas>
+        <canvas></canvas>
+    </div>
+
+    <header id="header">
+        <div class="container">
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="index.html#intro">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li>
+                        <a href="#mega-events" style="padding-left:0;">
+                            <div class="dropdown">Events<i class="fa fa-caret-down"></i>
+                                <div class="dropdown-content">
+                                    <a href="mega.html">Mega Events</a>
+                                    <a href="mini.html">Mini Events</a>
+                                    <a href="fun.html">Fun Events</a>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="index.html#schedule">Schedule</a></li>
+                    <li><a href="#footer">Contact</a></li>
+
+                </ul>
+            </nav>
+            <!-- #nav-menu-container -->
+        </div>
+    </header>
+
+    <section id="events" class="" style="position: relative; text-align: center; padding-top: 50px;">
+
+        <div class="container">
+            <div class="section-header">
+                <h2 style="padding-top: 50px;">Mini Events</h2>
+            </div>
+
+            <div>
+
+                <div class="cards1">
+
+                    <div class=" card2 [ is-collapsed ] ">
+                        <div class="card2__inner [ js-expander ]">
+                            <span>Code Relay</span>
+                        </div>
+
+                        <div  class="card2__expander" >
+
+                            <p style="text-align: left;"><strong>First Price:</strong> ₹2000/- <br> <strong>Second Prize:</strong>₹1000/-</p>
+                            <p style="text-align: left;"><strong>Entry Fee:</strong> Free</p>
+                            <p style="text-align: left;"><strong>Date:</strong> 19 April 2021</p>
+                            <button><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADqHosxUREtKNlEyVEFIWjNLTlYwWkJUOURERlM3SS4u" style="color: white;">Register</a></button> <br>
+                            <p style="text-align: left;"><strong>About:</strong> “You have to pass the baton, everyone takes a turn and chips in, that’s what great teams do...” Who says relay race is a physical sport...come with us to experience an unusual logical relay. CODE RELAY
+                                is not a event but a tiny effort to built team spirit around this amazing institute. </p>
+
+                            <p style="text-align: left;"><strong>Team Specifications:</strong> The team should consists of 2-3 members.(open for all)</p>
+
+                            <p style="text-align: left;"><strong>Description:</strong>
+                                <br><strong>Stage 1:</strong> This whole stage has to be completed within 10minutes. The first teammate would get a problem statement which has to be executed and as he completes the execution and if the output is correct
+                                the 1st stage is completed. <br>
+                                <strong>Stage 2:</strong> This stage has to be completed within 5 minutes . In this stage the player will be provided with a virtual dice where he has to select 3 number (1-6). Once participant rolls the dice the timer
+                                will start, if the selected number appears then he has to solve 5 EASY MCQ’s(Google form will be provided) or else has to dry run the given program(Google form link). Once he successfully completes this round this stage
+                                will be completed. <br>
+                                <strong>Stage 3:</strong> This stage has to be completed within 8 Minutes. Once the 2nd teammate completes stage 2, 3rd teammate will be provided with a problem statement which has to be executed to complete this round.
+                                <br>
+                                <strong>Note :</strong> If any team completes any stage before the given time period the remaining time will be added to the next stage.</p>
+                            <p style="text-align: left;"><strong>Rules:</strong> <br> 1. Partially executed code won’t be accepted. <br> 2. To participate in this event each and every team has to join the google meet during their respective time slot provided by the organizer. <br>                                3. For every stage the participant has to share his/her screen on the google meet. <br> 4. If you cheat, use any unfair practice or break the rules, you will be disqualified
+                                <br><br><a href="https://drive.google.com/file/d/1X92_zAU2j-iVJJ51al8U7iFFFlQnurwv/view?usp=sharing"> Click on the link for more information</a> </p>
+                            <p style="text-align: left;"><strong>Contact:</strong> Samruddhi Chavan (7021497763)  
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i class="arrow up" style="align-items: right;"></i></p>
+                           
+                        </div>
+                    </div>
+
+                    <div class=" card2 [ is-collapsed ] ">
+                        <div class="card2__inner [ js-expander ]">
+                            <span>Scavenger Hunt</span>
+
+                        </div>
+                        <div class="card2__expander" style="text-align: left">
+                            <p><strong>First Price:</strong> ₹2000/- <br> <strong>Second Prize:</strong>₹1000/-</p>
+                            <p><strong>Entry Fee:</strong> Free</p>
+                            <p><strong>Date:</strong> 23 April 2021</p>
+                            <button><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADqHosxUMzFIRzE3UFNZTkZJWjFQQjZaSzFTOFVUTi4u" style="color: white;">Register</a></button> <br>
+
+                            <p style="text-align: left;"><strong>About:</strong> Too bored in quarantine? Get ready to sharpen your minds and put your thinking caps on!! Searching for your daily necessities is a way more frustrating than imaginable. Let's make the quarantine interesting,
+                                Join in the fun of scavenger hunt and ensure you expertise in the skills of scrutinizing. Online scavenger hunt is an event, where you will be given a series of riddles to solve followed by sets of hints. When you reach
+                                the final destination, you will be awarded.<br></p>
+
+                            <p style="text-align: left;"><strong>Team Specifications:</strong> Team of 2/Solo participation</p>
+
+                            <p style="text-align: left;"><strong>Description:</strong> <br> <strong>Round1:</strong> Riddles based on the Household things. Participant needs to guess and find a thing.Elimination based on the average time required to solve and find the things (No
+                                time limit). <br>
+                                <strong> Round2:</strong> Round 2 based on a Brain Teaser. Participant has to find the answer within a limited time period.Elimination based on the average time required to solve the brain teasers. <br>
+                                <strong>Round3:</strong>Technical round based on electronic gadgets and riddles. Participant have to find the answer within a limited time period. <br>
+                            </p>
+                            <p style="text-align: left;"><strong>Description:</strong> <br> 1.Team of 2/Solo participation <br> 2.Top 5 finalists from a round 2 will be qualified for a round 3 (final round). <br> 3.Elimination of the participants from each round based on the average
+                                time required to solve all the riddles. <br> 4.Cheating/misconduct by any means will lead to straight disqualification. <br> 5.Participant must be with good internet connection, participant will be responsible of losing
+                                internet connection during the event.
+                                <br><br><a href="https://drive.google.com/file/d/1ecdbjY9MLecwnDRB7N07ZtwZsllFXXSw/view?usp=sharing"> Click on the link for more information</a> </p>
+                            <p><strong>Contact:</strong> Aishwarya Ghag (9987124994)  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i class="arrow up" style="align-items: right;"></i></p>
+
+                        </div>
+                    </div>
+
+                    <div class=" card2 [ is-collapsed ] ">
+                        <div class="card2__inner [ js-expander ]">
+                            <span>Technical Paper Presentation</span>
+
+                        </div>
+                        <div class="card2__expander" style="text-align: left">
+                            <p><strong>First Price:</strong> ₹2000/- <br> <strong>Second Prize:</strong>₹1000/-</p>
+                            <p><strong>Entry Fee:</strong> Free</p>
+                            <p><strong>Date:</strong> 24 April 2021</p>
+                            <button><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADqHosxUMUk3WkROOTlCWFVSNFFDWFY0NUlWOVc0Ry4u" style="color: white;">Register</a></button> <br>
+
+                            <p style="text-align: left;"><strong>Team Specifications:</strong> Maximum number of participants in a Team is 4</p>
+
+                            <p style="text-align: left;"><strong>Description:</strong> <br> <strong> Stage 1:</strong> In this stage the participant team has to submit their IEEE paper via google form/gmail. It will be examined by our experts. <br>
+                                <strong> Stage 2:</strong> Teams will appear for presentation of their ppt infront of our judge's panel where their presentation skills will get examined. <br>
+                                <strong> Stage 3:</strong> Our judge's will ask some questions to team members based on that marks given will given to the group. <br>
+                                <strong>Marking scheme</strong> <br> Presentation 50 Marks <br> Presentation skills and depth of knowledge 30 Marks <br> QnA session with judges 20 Marks <br>
+                            </p>
+                            <p style="text-align: left;"><strong>Rules:</strong> <br> 1.Maximum number of participants in a Team is 4. <br> 2.Participants have to submit their ppt in IEEE format only. <br> 3.The topics that the papers need to be based on are suggestive. It is advisable
+                                that the presentation focuses on one particular topic. <br> 4.Abstract should not exceed 1page and Paper should not exceed 6 pages. <br> 5.Keep your college ID-Card while presenting ppt on meet. <br> 6.Soft-copies of the
+                                submitted paper .docx format. <br> 7.Please Mail your abstract paper to our team difficulties will be addressed through the email-id esaacpce@gmail.com. <br> 8.The teams will get 10 minutes for presentation followed by
+                                question and answer session. <br> 9.Persons from different institutions can be a part of the same team. However, one person may not be a part of multiple teams for the same event. <br> 10.The mail with submissions should
+                                contain: <br> Title- theme of the paper. <br> Name of the authors - <br> Phone no of the authors- <br> E- mail ID - <br> 11.Paper should be in a two column format & should not exceed 6pages. <br> 12.Paper should be in Times
+                                New Roman font of size 12. <br> 13.For headings use bold and a font of size. <br> 14.Paper must contain index, list of figures, list of tables, abstract,introduction, point wise description of subject and conclusion and
+                                references. <br> 15.Paper must be preceded by a cover page specifying the title of the paper, names of authors and their college names as also their contact numbers and email ids. <br> 16.Last day to submit soft copy of
+                                your report (via e-mail) will be two days prior to the day of presentation. <br> 17.After you have submitted the soft copy, a panel of judges will go through your material. <br> 18.The abstract mail should contain abstract,
+                                references, your e-mail id and mobile number. <br> 19.The decision of judges will be final and no arguments or appeal will be entertained. <br> </p>
+                            <br> <a href="https://drive.google.com/file/d/1SvpFLpqnUKeMqfgcKNedo3LlmmPgeYIW/view?usp=sharing"> Click on the link for more information:</a>
+                            </p>
+                            <p><strong>Contact:</strong> Vaibhav Pandhare (8425979472)  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <i class="arrow up" style="align-items: right;"></i></p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--==========================
+                Footer
+  ============================-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8  venue-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.7539233242214!2d73.05933931442402!3d19.03056205834555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c24052e100f3%3A0xb6e3e4259b43a898!2sA.%20C.%20Patil%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1612874746839!5m2!1sen!2sin"
+                            width="600" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" id="desktop"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.7539233242214!2d73.05933931442402!3d19.03056205834555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c24052e100f3%3A0xb6e3e4259b43a898!2sA.%20C.%20Patil%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1612957979283!5m2!1sen!2sin"
+                            width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" id="mobile"></iframe>
+                    </div>
+
+                    <div class="col-lg-3 col-md-8 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A C Patil College of Engineering <br> Kharghar
+                            <br> Navi Mumbai, India <br>
+                            <strong>Email:</strong> vectors.acpce@gmail.com <br>
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/acpce.org/?ti=as" class="facebook">
+                                <i class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/vectors.acpce/?igshid=1v2kk25vhngqo" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="copyright">
+                &copy; Copyright <strong>ACPCE</strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+    <!-- #footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/venobox/venobox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Main Javascript File -->
+    <script src="js/main.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        (function($) {
+            var canvas = $('#bg').children('canvas'),
+                background = canvas[0],
+                foreground1 = canvas[1],
+                foreground2 = canvas[2],
+                config = {
+                    circle: {
+                        amount: 18,
+                        layer: 3,
+                        color: [157, 97, 207],
+                        alpha: 0.3
+                    },
+                    line: {
+                        amount: 12,
+                        layer: 3,
+                        color: [255, 255, 255],
+                        alpha: 0.3
+                    },
+                    speed: 0.5,
+                    angle: 20
+                };
+
+            if (background.getContext) {
+                var bctx = background.getContext('2d'),
+                    fctx1 = foreground1.getContext('2d'),
+                    fctx2 = foreground2.getContext('2d'),
+                    M = window.Math, // Cached Math
+                    degree = config.angle / 360 * M.PI * 2,
+                    circles = [],
+                    lines = [],
+                    wWidth, wHeight, timer;
+
+                requestAnimationFrame = window.requestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    window.msRequestAnimationFrame ||
+                    window.oRequestAnimationFrame ||
+                    function(callback, element) {
+                        setTimeout(callback, 1000 / 60);
+                    };
+
+                cancelAnimationFrame = window.cancelAnimationFrame ||
+                    window.mozCancelAnimationFrame ||
+                    window.webkitCancelAnimationFrame ||
+                    window.msCancelAnimationFrame ||
+                    window.oCancelAnimationFrame ||
+                    clearTimeout;
+
+                var setCanvasHeight = function() {
+                    wWidth = $(window).width();
+                    wHeight = $(window).height(),
+
+                        canvas.each(function() {
+                            this.width = wWidth;
+                            this.height = wHeight;
+                        });
+                };
+
+                var drawCircle = function(x, y, radius, color, alpha) {
+                    var gradient = fctx1.createRadialGradient(x, y, radius, x, y, 0);
+                    gradient.addColorStop(0, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + alpha + ')');
+                    gradient.addColorStop(1, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + (alpha - 0.1) + ')');
+
+                    fctx1.beginPath();
+                    fctx1.arc(x, y, radius, 0, M.PI * 2, true);
+                    fctx1.fillStyle = gradient;
+                    fctx1.fill();
+                };
+
+                var drawLine = function(x, y, width, color, alpha) {
+                    var endX = x + M.sin(degree) * width,
+                        endY = y - M.cos(degree) * width,
+                        gradient = fctx2.createLinearGradient(x, y, endX, endY);
+                    gradient.addColorStop(0, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + alpha + ')');
+                    gradient.addColorStop(1, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + (alpha - 0.1) + ')');
+
+                    fctx2.beginPath();
+                    fctx2.moveTo(x, y);
+                    fctx2.lineTo(endX, endY);
+                    fctx2.lineWidth = 3;
+                    fctx2.lineCap = 'round';
+                    fctx2.strokeStyle = gradient;
+                    fctx2.stroke();
+                };
+
+                var drawBack = function() {
+                    bctx.clearRect(0, 0, wWidth, wHeight);
+
+                    var gradient = [];
+
+                    gradient[0] = bctx.createRadialGradient(wWidth * 0.3, wHeight * 0.1, 0, wWidth * 0.3, wHeight * 0.1, wWidth * 0.9);
+                    gradient[0].addColorStop(0, 'rgb(0, 26, 77)');
+                    gradient[0].addColorStop(1, 'transparent');
+
+                    bctx.translate(wWidth, 0);
+                    bctx.scale(-1, 1);
+                    bctx.beginPath();
+                    bctx.fillStyle = gradient[0];
+                    bctx.fillRect(0, 0, wWidth, wHeight);
+
+                    gradient[1] = bctx.createRadialGradient(wWidth * 0.1, wHeight * 0.1, 0, wWidth * 0.3, wHeight * 0.1, wWidth);
+                    gradient[1].addColorStop(0, 'rgb(0, 150, 240)');
+                    gradient[1].addColorStop(0.8, 'transparent');
+
+                    bctx.translate(wWidth, 0);
+                    bctx.scale(-1, 1);
+                    bctx.beginPath();
+                    bctx.fillStyle = gradient[1];
+                    bctx.fillRect(0, 0, wWidth, wHeight);
+
+                    gradient[2] = bctx.createRadialGradient(wWidth * 0.1, wHeight * 0.5, 0, wWidth * 0.1, wHeight * 0.5, wWidth * 0.5);
+                    gradient[2].addColorStop(0, 'rgb(40, 20, 105)');
+                    gradient[2].addColorStop(1, 'transparent');
+
+                    bctx.beginPath();
+                    bctx.fillStyle = gradient[2];
+                    bctx.fillRect(0, 0, wWidth, wHeight);
+                };
+
+                var animate = function() {
+                    var sin = M.sin(degree),
+                        cos = M.cos(degree);
+
+                    if (config.circle.amount > 0 && config.circle.layer > 0) {
+                        fctx1.clearRect(0, 0, wWidth, wHeight);
+                        for (var i = 0, len = circles.length; i < len; i++) {
+                            var item = circles[i],
+                                x = item.x,
+                                y = item.y,
+                                radius = item.radius,
+                                speed = item.speed;
+
+                            if (x > wWidth + radius) {
+                                x = -radius;
+                            } else if (x < -radius) {
+                                x = wWidth + radius
+                            } else {
+                                x += sin * speed;
+                            }
+
+                            if (y > wHeight + radius) {
+                                y = -radius;
+                            } else if (y < -radius) {
+                                y = wHeight + radius;
+                            } else {
+                                y -= cos * speed;
+                            }
+
+                            item.x = x;
+                            item.y = y;
+                            drawCircle(x, y, radius, item.color, item.alpha);
+                        }
+                    }
+
+                    if (config.line.amount > 0 && config.line.layer > 0) {
+                        fctx2.clearRect(0, 0, wWidth, wHeight);
+                        for (var j = 0, len = lines.length; j < len; j++) {
+                            var item = lines[j],
+                                x = item.x,
+                                y = item.y,
+                                width = item.width,
+                                speed = item.speed;
+
+                            if (x > wWidth + width * sin) {
+                                x = -width * sin;
+                            } else if (x < -width * sin) {
+                                x = wWidth + width * sin;
+                            } else {
+                                x += sin * speed;
+                            }
+
+                            if (y > wHeight + width * cos) {
+                                y = -width * cos;
+                            } else if (y < -width * cos) {
+                                y = wHeight + width * cos;
+                            } else {
+                                y -= cos * speed;
+                            }
+
+                            item.x = x;
+                            item.y = y;
+                            drawLine(x, y, width, item.color, item.alpha);
+                        }
+                    }
+
+                    timer = requestAnimationFrame(animate);
+                };
+
+                var createItem = function() {
+                    circles = [];
+                    lines = [];
+
+                    if (config.circle.amount > 0 && config.circle.layer > 0) {
+                        for (var i = 0; i < config.circle.amount / config.circle.layer; i++) {
+                            for (var j = 0; j < config.circle.layer; j++) {
+                                circles.push({
+                                    x: M.random() * wWidth,
+                                    y: M.random() * wHeight,
+                                    radius: M.random() * (20 + j * 5) + (20 + j * 5),
+                                    color: config.circle.color,
+                                    alpha: M.random() * 0.2 + (config.circle.alpha - j * 0.1),
+                                    speed: config.speed * (1 + j * 0.5)
+                                });
+                            }
+                        }
+                    }
+
+                    if (config.line.amount > 0 && config.line.layer > 0) {
+                        for (var m = 0; m < config.line.amount / config.line.layer; m++) {
+                            for (var n = 0; n < config.line.layer; n++) {
+                                lines.push({
+                                    x: M.random() * wWidth,
+                                    y: M.random() * wHeight,
+                                    width: M.random() * (20 + n * 5) + (20 + n * 5),
+                                    color: config.line.color,
+                                    alpha: M.random() * 0.2 + (config.line.alpha - n * 0.1),
+                                    speed: config.speed * (1 + n * 0.5)
+                                });
+                            }
+                        }
+                    }
+
+                    cancelAnimationFrame(timer);
+                    timer = requestAnimationFrame(animate);
+                    drawBack();
+                };
+
+                $(document).ready(function() {
+                    setCanvasHeight();
+                    createItem();
+                });
+                $(window).resize(function() {
+                    setCanvasHeight();
+                    createItem();
+                });
+            }
+        })(jQuery);
+
+        var $cell = $('.card2');
+
+        //open and close card when clicked on card
+        $cell.find('.js-expander').click(function() {
+
+            var $thisCell = $(this).closest('.card2');
+
+            if ($thisCell.hasClass('is-collapsed')) {
+                $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+                $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+
+                if ($cell.not($thisCell).hasClass('is-inactive')) {
+                    //do nothing
+                } else {
+                    $cell.not($thisCell).addClass('is-inactive');
+                }
+
+            } else {
+                $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+                $cell.not($thisCell).removeClass('is-inactive');
+            }
+        });
+
+        //close card when click on cross
+        $cell.find('.js-collapser').click(function() {
+
+            var $thisCell = $(this).closest('.card2');
+
+            $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+            $cell.not($thisCell).removeClass('is-inactive');
+
+        });
+        $(".slider").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000, //2000ms = 2s;
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: false
+                }
+            }
+        });       }());
+    </script>
+
+    <script>
+        (function($) {
+            var canvas = $('#bg').children('canvas'),
+                background = canvas[0],
+                foreground1 = canvas[1],
+                foreground2 = canvas[2],
+                config = {
+                    circle: {
+                        amount: 18,
+                        layer: 3,
+                        color: [157, 97, 207],
+                        alpha: 0.3
+                    },
+                    line: {
+                        amount: 12,
+                        layer: 3,
+                        color: [255, 255, 255],
+                        alpha: 0.3
+                    },
+                    speed: 0.5,
+                    angle: 20
+                };
+
+            if (background.getContext) {
+                var bctx = background.getContext('2d'),
+                    fctx1 = foreground1.getContext('2d'),
+                    fctx2 = foreground2.getContext('2d'),
+                    M = window.Math, // Cached Math
+                    degree = config.angle / 360 * M.PI * 2,
+                    circles = [],
+                    lines = [],
+                    wWidth, wHeight, timer;
+
+                requestAnimationFrame = window.requestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    window.msRequestAnimationFrame ||
+                    window.oRequestAnimationFrame ||
+                    function(callback, element) {
+                        setTimeout(callback, 1000 / 60);
+                    };
+
+                cancelAnimationFrame = window.cancelAnimationFrame ||
+                    window.mozCancelAnimationFrame ||
+                    window.webkitCancelAnimationFrame ||
+                    window.msCancelAnimationFrame ||
+                    window.oCancelAnimationFrame ||
+                    clearTimeout;
+
+                var setCanvasHeight = function() {
+                    wWidth = $(window).width();
+                    wHeight = $(window).height(),
+
+                        canvas.each(function() {
+                            this.width = wWidth;
+                            this.height = wHeight;
+                        });
+                };
+
+                var drawCircle = function(x, y, radius, color, alpha) {
+                    var gradient = fctx1.createRadialGradient(x, y, radius, x, y, 0);
+                    gradient.addColorStop(0, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + alpha + ')');
+                    gradient.addColorStop(1, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + (alpha - 0.1) + ')');
+
+                    fctx1.beginPath();
+                    fctx1.arc(x, y, radius, 0, M.PI * 2, true);
+                    fctx1.fillStyle = gradient;
+                    fctx1.fill();
+                };
+
+                var drawLine = function(x, y, width, color, alpha) {
+                    var endX = x + M.sin(degree) * width,
+                        endY = y - M.cos(degree) * width,
+                        gradient = fctx2.createLinearGradient(x, y, endX, endY);
+                    gradient.addColorStop(0, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + alpha + ')');
+                    gradient.addColorStop(1, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + (alpha - 0.1) + ')');
+
+                    fctx2.beginPath();
+                    fctx2.moveTo(x, y);
+                    fctx2.lineTo(endX, endY);
+                    fctx2.lineWidth = 3;
+                    fctx2.lineCap = 'round';
+                    fctx2.strokeStyle = gradient;
+                    fctx2.stroke();
+                };
+
+                var drawBack = function() {
+                    bctx.clearRect(0, 0, wWidth, wHeight);
+
+                    var gradient = [];
+
+                    gradient[0] = bctx.createRadialGradient(wWidth * 0.3, wHeight * 0.1, 0, wWidth * 0.3, wHeight * 0.1, wWidth * 0.9);
+                    gradient[0].addColorStop(0, 'rgb(0, 26, 77)');
+                    gradient[0].addColorStop(1, 'transparent');
+
+                    bctx.translate(wWidth, 0);
+                    bctx.scale(-1, 1);
+                    bctx.beginPath();
+                    bctx.fillStyle = gradient[0];
+                    bctx.fillRect(0, 0, wWidth, wHeight);
+
+                    gradient[1] = bctx.createRadialGradient(wWidth * 0.1, wHeight * 0.1, 0, wWidth * 0.3, wHeight * 0.1, wWidth);
+                    gradient[1].addColorStop(0, 'rgb(0, 150, 240)');
+                    gradient[1].addColorStop(0.8, 'transparent');
+
+                    bctx.translate(wWidth, 0);
+                    bctx.scale(-1, 1);
+                    bctx.beginPath();
+                    bctx.fillStyle = gradient[1];
+                    bctx.fillRect(0, 0, wWidth, wHeight);
+
+                    gradient[2] = bctx.createRadialGradient(wWidth * 0.1, wHeight * 0.5, 0, wWidth * 0.1, wHeight * 0.5, wWidth * 0.5);
+                    gradient[2].addColorStop(0, 'rgb(40, 20, 105)');
+                    gradient[2].addColorStop(1, 'transparent');
+
+                    bctx.beginPath();
+                    bctx.fillStyle = gradient[2];
+                    bctx.fillRect(0, 0, wWidth, wHeight);
+                };
+
+                var animate = function() {
+                    var sin = M.sin(degree),
+                        cos = M.cos(degree);
+
+                    if (config.circle.amount > 0 && config.circle.layer > 0) {
+                        fctx1.clearRect(0, 0, wWidth, wHeight);
+                        for (var i = 0, len = circles.length; i < len; i++) {
+                            var item = circles[i],
+                                x = item.x,
+                                y = item.y,
+                                radius = item.radius,
+                                speed = item.speed;
+
+                            if (x > wWidth + radius) {
+                                x = -radius;
+                            } else if (x < -radius) {
+                                x = wWidth + radius
+                            } else {
+                                x += sin * speed;
+                            }
+
+                            if (y > wHeight + radius) {
+                                y = -radius;
+                            } else if (y < -radius) {
+                                y = wHeight + radius;
+                            } else {
+                                y -= cos * speed;
+                            }
+
+                            item.x = x;
+                            item.y = y;
+                            drawCircle(x, y, radius, item.color, item.alpha);
+                        }
+                    }
+
+                    if (config.line.amount > 0 && config.line.layer > 0) {
+                        fctx2.clearRect(0, 0, wWidth, wHeight);
+                        for (var j = 0, len = lines.length; j < len; j++) {
+                            var item = lines[j],
+                                x = item.x,
+                                y = item.y,
+                                width = item.width,
+                                speed = item.speed;
+
+                            if (x > wWidth + width * sin) {
+                                x = -width * sin;
+                            } else if (x < -width * sin) {
+                                x = wWidth + width * sin;
+                            } else {
+                                x += sin * speed;
+                            }
+
+                            if (y > wHeight + width * cos) {
+                                y = -width * cos;
+                            } else if (y < -width * cos) {
+                                y = wHeight + width * cos;
+                            } else {
+                                y -= cos * speed;
+                            }
+
+                            item.x = x;
+                            item.y = y;
+                            drawLine(x, y, width, item.color, item.alpha);
+                        }
+                    }
+
+                    timer = requestAnimationFrame(animate);
+                };
+
+                var createItem = function() {
+                    circles = [];
+                    lines = [];
+
+                    if (config.circle.amount > 0 && config.circle.layer > 0) {
+                        for (var i = 0; i < config.circle.amount / config.circle.layer; i++) {
+                            for (var j = 0; j < config.circle.layer; j++) {
+                                circles.push({
+                                    x: M.random() * wWidth,
+                                    y: M.random() * wHeight,
+                                    radius: M.random() * (20 + j * 5) + (20 + j * 5),
+                                    color: config.circle.color,
+                                    alpha: M.random() * 0.2 + (config.circle.alpha - j * 0.1),
+                                    speed: config.speed * (1 + j * 0.5)
+                                });
+                            }
+                        }
+                    }
+
+                    if (config.line.amount > 0 && config.line.layer > 0) {
+                        for (var m = 0; m < config.line.amount / config.line.layer; m++) {
+                            for (var n = 0; n < config.line.layer; n++) {
+                                lines.push({
+                                    x: M.random() * wWidth,
+                                    y: M.random() * wHeight,
+                                    width: M.random() * (20 + n * 5) + (20 + n * 5),
+                                    color: config.line.color,
+                                    alpha: M.random() * 0.2 + (config.line.alpha - n * 0.1),
+                                    speed: config.speed * (1 + n * 0.5)
+                                });
+                            }
+                        }
+                    }
+
+                    cancelAnimationFrame(timer);
+                    timer = requestAnimationFrame(animate);
+                    drawBack();
+                };
+
+                $(document).ready(function() {
+                    setCanvasHeight();
+                    createItem();
+                });
+                $(window).resize(function() {
+                    setCanvasHeight();
+                    createItem();
+                });
+            }
+        })(jQuery);
+
+        $(document).ready(function() {
+            //Preloader
+            preloaderFadeOutTime = 500;
+
+            function hidePreloader() {
+                var preloader = $('.spinner-wrapper');
+                preloader.fadeOut(preloaderFadeOutTime);
+            }
+            hidePreloader();
+        });
+    </script>
+
+</body>
+
+</html>
